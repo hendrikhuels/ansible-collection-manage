@@ -1,0 +1,3 @@
+---
+
+manage_sysctl_path: /etc/sysctl.d/99-devops.conf
