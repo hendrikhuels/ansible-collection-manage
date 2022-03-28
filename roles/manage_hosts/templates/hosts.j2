@@ -1,0 +1,7 @@
+127.0.0.1 localhost
+
+::1 ip6-localhost
+
+{% for item in groups['all'] %}
+{{ hostvars[item]['ansible_ssh_host'] }} {{ item }}
+{% endfor %}
