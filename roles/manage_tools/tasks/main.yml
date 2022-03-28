@@ -2,5 +2,11 @@
 
 - name: Install container tools
   ansible.builtin.package:
+    name: "epel-release"
+    state: present
+  when: manage_tools_epel_release
+
+- name: Install container tools
+  ansible.builtin.package:
     name: "{{ manage_tools_packages }}"
     state: present
