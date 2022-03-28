@@ -6,6 +6,12 @@
       - "stage_name is not none"
       - "project_name is not none"
 
+- name: "Add ssh.d folder to home"
+  ansible.builtin.file:
+    path: "~/.ssh/ssh_config.d"
+    state: directory
+    mode: 755
+
 - name: "Create local ssh config"
   ansible.builtin.template:
     dest: "~/.ssh/ssh_config.d/{{ project_name }}-{{ stage_name }}.conf"
