@@ -3,6 +3,6 @@
 manage_users: []
 manage_users_primary_group: "devops"
 manage_users_groups: "systemd-journal,systemd-resolve"
-manage_users_home_folder: null
+manage_users_home_folder: "{{ inventory_dir }}/../../files/project_users/"
 
 manage_users_default_admins: []
