@@ -1,0 +1,14 @@
+---
+
+- name: "Create {{ manage_users_primary_group }} Group"
+  ansible.builtin.group:
+    name: "{{ manage_users_primary_group }}"
+    state: present
+
+- name: "Add {{ manage_users_primary_group }} to sudoers.d"
+  ansible.builtin.template:
+    dest: "/etc/sudoers.d/{{ manage_users_primary_group }}"
+    src: sudo.j2
+    owner: root
+    group: root
+    mode: 0440

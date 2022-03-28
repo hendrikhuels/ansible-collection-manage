@@ -1,0 +1,11 @@
+---
+
+- name: "Check required parameters"
+  ansible.builtin.assert:
+    that:
+      - manage_users|length>0
+      - "manage_users_home_folder is not none"
+
+- include_tasks: add_groups.yml
+- include_tasks: remove_users.yml
+- include_tasks: add_users.yml
