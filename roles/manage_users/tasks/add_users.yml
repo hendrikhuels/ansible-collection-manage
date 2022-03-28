@@ -1,0 +1,28 @@
+---
+
+- name: "Add users"
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    group: "{{ manage_users_primary_group }}"
+    groups: "{{ manage_users_groups }}"
+    shell: "{{ item.shell }}"
+  with_items: "{{ manage_users }}"
+
+- name: "Copy users home folder"
+  ansible.builtin.copy:
+    src: "{{ manage_users_home_folder }}/{{ item.name }}/"
+    dest: "/home/{{ item.name }}/"
+    owner: "{{ item.name }}"
+    group: "{{ manage_users_primary_group }}"
+    mode: 0600
+    directory_mode: 0700
+  with_items: "{{ manage_users }}"
+
+- name: "fix permissions on users home folder"
+  ansible.builtin.file:
+    path: "/home/{{ item.name }}"
+    state: directory
+    mode: 0700
+    owner: "{{ item.name }}"
+    group: "{{ manage_users_primary_group }}"
+  with_items: "{{ manage_users }}"

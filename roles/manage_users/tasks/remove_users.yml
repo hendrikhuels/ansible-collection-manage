@@ -1,0 +1,16 @@
+---
+
+- name: "Register all /home directories"
+  ansible.builtin.find:
+    paths: /home/
+    file_type: directory
+    depth: 1
+  register: available_users
+
+- name: "Remove user"
+  ansible.builtin.user:
+    name: "{{ item.pw_name }}"
+    state: absent
+    remove: true
+  with_items: "{{ available_users.files }}"
+  when: item.pw_name not in manage_users|map(attribute='name')|list and item.pw_name not in manage_users_default_admins
