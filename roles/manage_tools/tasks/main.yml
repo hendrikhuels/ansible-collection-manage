@@ -1,0 +1,6 @@
+---
+
+- name: Install container tools
+  ansible.builtin.package:
+    name: "{{ manage_tools_packages }}"
+    state: present
