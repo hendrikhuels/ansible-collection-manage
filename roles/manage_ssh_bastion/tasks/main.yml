@@ -1,9 +1,13 @@
 ---
 
+- name: "Check required parameters"
+  ansible.builtin.assert:
+    that:
+      - "stage_name is not none"
+      - "project_name is not none"
+
 - name: "Create local ssh config"
   ansible.builtin.template:
-    dest: "/etc/ssh/ssh_config.d/{{ project_name }}-{{ stage_name }}.conf"
+    dest: "~/.ssh/ssh_config.d/{{ project_name }}-{{ stage_name }}.conf"
     src: project_name-stage_name.conf.j2
-    owner: root
-    group: root
     mode: 0644

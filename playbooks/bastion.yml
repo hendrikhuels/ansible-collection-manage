@@ -2,6 +2,5 @@
 
 - hosts: localhost
   gather_facts: false
-  become: true
   roles:
     - role: hendrikhuels.cd.manage_ssh_bastion
