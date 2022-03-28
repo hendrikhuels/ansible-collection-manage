@@ -10,7 +10,7 @@
   ansible.builtin.file:
     path: "~/.ssh/ssh_config.d"
     state: directory
-    mode: 755
+    mode: 0766
 
 - name: "Create local ssh config"
   ansible.builtin.template:
