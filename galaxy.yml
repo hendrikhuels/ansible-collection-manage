@@ -1,0 +1,7 @@
+namespace: hendrikhuels
+name: cd
+version: 0.0.1
+readme: README.md
+authors:
+  - Hendrik Hüls
+description: Manage Rocky Linux 8

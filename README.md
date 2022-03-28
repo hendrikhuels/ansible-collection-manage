@@ -1,0 +1,1 @@
+# This collection manages everything to deploy oci based applications on Rocky Linux 8
