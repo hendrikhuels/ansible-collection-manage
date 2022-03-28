@@ -1,0 +1,19 @@
+{% if jumphost_ip is defined and jumphost_ip %}
+#
+# Jump Host
+#
+Host {{ project_name }}-{{ stage_name }}-jump
+    HostName {{ jumphost_ip }}
+{% endif %}
+
+#
+# Target Nodes
+# All nodes in the project that should be reachable via ssh
+#
+{% for item in groups['all'] %}
+Host {{ project_name }}-{{ stage_name }}-{{ item }}
+    HostName {{ hostvars[item]['ansible_ssh_host'] }}
+{% if jumphost_ip is defined and jumphost_ip %}
+    ProxyJump {{ project_name }}-{{ stage_name }}-jump
+{% endif %}
+{% endfor %}
