@@ -1,10 +1,9 @@
-# Manage users
+# Manage hosts
 
-This role manages hosts file.
+This role manages hosts file, based on the inventory.
 
-## Example
+## Example Playbook
 
-Call the role
 ```yaml
 - hosts: all
   gather_facts: false

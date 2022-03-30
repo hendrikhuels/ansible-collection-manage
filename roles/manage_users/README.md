@@ -9,7 +9,7 @@ Variable                     | Default                                          
 `manage_users`               | (required)                                       | (`dictionary, list`) List of all users with attributes
 `manage_users_primary_group` | `devops`                                         | (`str`) Primary group
 `manage_users_groups`        | "systemd-journal,systemd-resolve"                | (`str`) User groups
-`manage_users_home_folder`   | `{{ inventory_dir }}/../../files/project_users/` | (`str`) Directory, where to find the /home mirror
+`manage_users_home_folder`   | `{{ inventory_dir }}/files/project_users/` | (`str`) Directory, where to find the /home mirror
 `manage_users_default_admins`| empty                                            | (`list`) List of standard admin users
 
 ## Example
