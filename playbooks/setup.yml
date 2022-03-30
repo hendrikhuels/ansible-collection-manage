@@ -7,4 +7,4 @@
     - role: hendrikhuels.cd.manage_hosts
     - role: hendrikhuels.cd.manage_sysctl
     - role: hendrikhuels.cd.manage_tools
-    - role: hendrikhuels.cd.sshd
+    - role: hendrikhuels.cd.manage_sshd
