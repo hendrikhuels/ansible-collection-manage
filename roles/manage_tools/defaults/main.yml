@@ -1,4 +1,4 @@
 ---
 
-manage_tools_packages: ['podman']
+manage_tools_packages: ['podman', 'bash-completion']
 manage_tools_epel_release: true

@@ -6,7 +6,7 @@ This role manages installed tools.
 
 Variable                     | Default       | Description
 ---                          | ---           | ---
-`manage_tools_packages`      | `['podman']`  | (`list`) Installed software
+`manage_tools_packages`      | `['podman', 'bash-completion']`  | (`list`) Installed software
 `manage_tools_epel_release`  | `false`        | (`bool`) Install epel-release
 
 
