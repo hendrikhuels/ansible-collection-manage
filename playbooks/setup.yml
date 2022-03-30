@@ -4,6 +4,7 @@
   gather_facts: false
   become: true
   roles:
+    - role: hendrikhuels.cd.manage_users
     - role: hendrikhuels.cd.manage_hosts
     - role: hendrikhuels.cd.manage_sysctl
     - role: hendrikhuels.cd.manage_tools

@@ -5,9 +5,11 @@
     path: /etc/ssh/sshd_config
     regexp: '^PasswordAuthentication '
     line: PasswordAuthentication no
+  register: restart-sshd
 
 - name: "Disable root login"
   ansible.builtin.lineinfile:
     path: /etc/ssh/sshd_config
     regexp: '^PermitRootLogin '
     line: PermitRootLogin no
+  register: restart-sshd
