@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  gather_facts: false
+  become: true
+  vars:
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no -o UnserKnownHostFile=/dev/null -o ProxyCommand="ssh -o StrictHostKeyChecking=no -o UnserKnownHostFile=/dev/null -W %h:%p -q {{ standard_admin_user }}@{{ jumphost_ip }}"'
+    ansible_user: "{{ standard_admin_user }}"
+  roles:
+    - role: hendrikhuels.cd.manage_users
