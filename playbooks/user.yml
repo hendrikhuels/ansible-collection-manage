@@ -4,7 +4,7 @@
   gather_facts: false
   become: true
   vars:
-    ansible_ssh_common_args: '-o StrictHostKeyChecking=no -o UserKnownHostFile=/dev/null -o ProxyCommand="ssh -o StrictHostKeyChecking=no -o UserKnownHostFile=/dev/null -W %h:%p -q {{ standard_admin_user }}@{{ jumphost_ip }}"'
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ProxyCommand="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p -q {{ standard_admin_user }}@{{ jumphost_ip }}"'
     ansible_user: "{{ standard_admin_user }}"
   roles:
     - role: hendrikhuels.cd.manage_users
