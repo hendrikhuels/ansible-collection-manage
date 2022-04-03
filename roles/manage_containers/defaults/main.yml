@@ -1,0 +1,25 @@
+container_name: null
+container_variables: null
+container_volumes: []
+container_ext_volumes: []
+container_ports: []
+container_command: []
+container_stop_time: null
+container_pid_mode: null
+container_network_mode: null
+registry_url: null
+registry_username: null
+registry_password: null
+image_name: null
+image_tag: null
+callback_tasks: null
+service_user: null
+service_group: null
+limit_nofile: null
+limit_nproc: null
+limit_tasks: null
+container_action: null
+
+start_limit_interval_sec: 500
+start_limit_burst: 5
+service_start_sec: "5s"

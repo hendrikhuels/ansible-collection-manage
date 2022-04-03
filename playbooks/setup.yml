@@ -3,8 +3,11 @@
 - hosts: all
   gather_facts: false
   become: true
+  vars:
+    selinux_state: permissive
   roles:
     - role: hendrikhuels.cd.manage_users
+    - role: hendrikhuels.cd.manage_selinux
     - role: hendrikhuels.cd.manage_hosts
     - role: hendrikhuels.cd.manage_sysctl
     - role: hendrikhuels.cd.manage_tools
